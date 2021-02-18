@@ -3,7 +3,8 @@ from config import get_configs
 
 
 def notify(notifier, title, msg, duration):
-    notifier.show_toast(title=title, msg=msg, duration=duration)
+    # icon_path needs to be defined (even if invalid) so the executable will work fine
+    notifier.show_toast(title=title, msg=msg, duration=duration, icon_path="")
 
 
 def min2sec(mins):

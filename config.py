@@ -11,6 +11,8 @@ def get_configs():
     config.read('config.ini', encoding='utf-8')
     try:
         interval = float(config['DEFAULT'].get('IntervalMinutes', DEFAULT_INTERVAL))
+        if interval < 0.1:
+            interval = DEFAULT_INTERVAL
     except ValueError:
         interval = DEFAULT_INTERVAL
     title = config['DEFAULT'].get('ToastTitle', DEFAULT_TITLE)
